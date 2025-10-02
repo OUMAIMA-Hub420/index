@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oumaima Charafeddine - Professional Résumé</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.6;
+            color: #000000;
+            background-color: #F8FAFC;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            min-height: 100vh;
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: white;
+            color: #000000;
+            padding: 40px 30px;
+            text-align: center;
+            border-bottom: 3px solid #9AA6B2;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .header-content {
+            flex: 1;
+            text-align: center;
+        }
+
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #9AA6B2;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-photo:hover {
+            transform: scale(1.05);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+            font-weight: 300;
+        }
+
+        .header .title {
+            font-size: 1.2rem;
+            color: #9AA6B2;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 25px;
+            padding: 20px;
+            background-color: #D9EAFD;
+            border-radius: 8px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #000000;
+            font-weight: 500;
+        }
+
+        .contact-item a {
+            color: #000000;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            border-bottom: 1px solid transparent;
+        }
+
+        .contact-item a:hover {
+            color: #9AA6B2;
+            border-bottom: 1px solid #9AA6B2;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 40px 30px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            color: #000000;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #9AA6B2;
+            position: relative;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: #9AA6B2;
+        }
+
+        /* About Me */
+        .about-text {
+            font-size: 1.1rem;
+            color: #000000;
+            line-height: 1.8;
+            background-color: #D9EAFD;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #9AA6B2;
+        }
+
+        /* Experience & Education */
+        .timeline-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: #D9EAFD;
+            border-radius: 8px;
+            border-left: 4px solid #9AA6B2;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2px;
+            top: 25px;
+            width: 8px;
+            height: 8px;
+            background: #9AA6B2;
+            border-radius: 50%;
+        }
+
+        .timeline-item h3 {
+            color: #000000;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .timeline-item .company {
+            color: #000000;
+            font-weight: 700;
+            margin-bottom: 5px;
+            font-size: 1.05rem;
+        }
+
+        .timeline-item .date {
+            color: #9AA6B2;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .timeline-item p {
+            color: #000000;
+            line-height: 1.6;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: #D9EAFD;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #9AA6B2;
+        }
+
+        .skill-category h3 {
+            color: #000000;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            padding: 5px 0;
+            color: #000000;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .skill-list li::before {
+            content: '▪';
+            color: #9AA6B2;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Projects */
+        .project-item {
+            background: #D9EAFD;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #9AA6B2;
+        }
+
+        .project-item h3 {
+            color: #000000;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .project-item p {
+            color: #000000;
+            line-height: 1.6;
+        }
+
+        .project-tech {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #9AA6B2;
+            font-weight: 600;
+        }
+
+        /* Responsive Design */
+            @media (max-width: 768px) {
+                .container {
+                    margin: 0;
+                    box-shadow: none;
+                }
+
+                .header {
+                    flex-direction: column;
+                    text-align: center;
+                    padding: 30px 20px;
+                }
+
+                .header-content {
+                    order: 2;
+                }
+
+                .profile-photo {
+                    order: 1;
+                    width: 120px;
+                    height: 120px;
+                    margin-bottom: 20px;
+                }
+
+                .header h1 {
+                    font-size: 2rem;
+                }
+
+                .header .title {
+                    font-size: 1rem;
+                }
+
+                .contact-info {
+                    flex-direction: column;
+                    gap: 15px;
+                    margin-left: 10px;
+                    margin-right: 10px;
+                    padding: 15px;
+                }
+
+                .contact-item {
+                    justify-content: center;
+                }
+
+                .main-content {
+                    padding: 30px 20px;
+                }
+
+                .section h2 {
+                    font-size: 1.5rem;
+                }
+
+                .skills-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .profile-photo {
+                    width: 100px;
+                    height: 100px;
+                }
+
+                .header h1 {
+                    font-size: 1.8rem;
+                }
+
+                .header .title {
+                    font-size: 0.9rem;
+                }
+
+                .section h2 {
+                    font-size: 1.3rem;
+                }
+
+                .about-text {
+                    font-size: 1rem;
+                    padding: 15px;
+                }
+
+                .contact-info {
+                    margin-left: 5px;
+                    margin-right: 5px;
+                    padding: 10px;
+                }
+
+                .timeline-item, .skill-category, .project-item {
+                    padding: 15px;
+                }
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="header-content">
+                <h1>Oumaima Charafeddine</h1>
+                <div class="title">Laureate of Master in Biology and Health</div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span>📧</span>
+                        <a href="mailto:charafeddineoumaima33@gmail.com">charafeddineoumaima33@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <span>📱</span>
+                        <span>+212 602631942</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>💼</span>
+                        <a href="https://www.linkedin.com/in/oumaima-charafeddine-0792221bb" target="_blank">www.linkedin.com/in/oumaima-charafeddine-0792221bb</a>
+                    </div>
+                </div>
+            </div>
+            <img src="profile-photo.jpg" alt="Oumaima Charafeddine" class="profile-photo">
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- About Me Section -->
+            <section class="section">
+                <h2>About Me</h2>
+                <p class="about-text">
+                    Passionate and dedicated biology professional with extensive laboratory experience and 
+                    strong analytical skills. Currently pursuing a Master's degree in Biology and Health, 
+                    with comprehensive hands-on experience in microbiology, biochemistry, hematology, and 
+                    immunology. Committed to continuous learning and professional development, with proven 
+                    expertise in laboratory techniques, data analysis, and scientific research. Excellent 
+                    problem-solving abilities and collaborative mindset, ready to contribute to innovative 
+                    healthcare and research initiatives.
+                </p>
+            </section>
+
+            <!-- Experience Section -->
+            <section class="section">
+                <h2>Professional Experience</h2>
+                
+                <div class="timeline-item">
+                    <h3>Master's Final Project Internship</h3>
+                    <div class="company">Faculty of Sciences Ben M'sik, Laboratory of Ecology and Environment</div>
+                    <div class="date">March 2025 – July 2025</div>
+                    <p>
+                        • Conducted antibacterial tests and antibiograms<br>
+                        • Applied four-box method for detecting antibiotic residues<br>
+                        • Performed blood sampling on Hubbard chickens<br>
+                        • Analyzed environmental impact of antibiotics in poultry farming
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Operational Internship - Biochemistry, Hematology and Immunology</h3>
+                    <div class="company">Labo Mac</div>
+                    <div class="date">July 2024 – August 2024</div>
+                    <p>
+                        • Executed biochemical techniques using automated equipment<br>
+                        • Acquired and interpreted hematological and serological tests<br>
+                        • Performed immunofluorescence techniques for antibody detection<br>
+                        • Maintained quality control standards in laboratory procedures
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Operational Internship - Spermatology</h3>
+                    <div class="company">Labo Mac</div>
+                    <div class="date">August 2023 – September 2023</div>
+                    <p>
+                        • Evaluated sperm motility and morphology<br>
+                        • Conducted DNA fragmentation and decondensation tests<br>
+                        • Performed migration-survival tests<br>
+                        • Analyzed reproductive health parameters
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Operational Internship - Bacteriology</h3>
+                    <div class="company">Labo Mac</div>
+                    <div class="date">August 2023 – September 2023</div>
+                    <p>
+                        • Performed cytobacteriological analysis of urine samples<br>
+                        • Identified pathogenic bacteria in stool samples<br>
+                        • Conducted vaginal swab analyses<br>
+                        • Applied sterile techniques and contamination control
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Operational Internship - Hormonology</h3>
+                    <div class="company">Institut Pasteur</div>
+                    <div class="date">August 2022 - September 2022</div>
+                    <p>
+                        <strong>Hormonology and Tumor Markers Service</strong><br>
+                        • Acquired hormonal analysis techniques<br>
+                        • Performed biological analysis of thyroid, fertility and adrenal glands<br>
+                        • Conducted dosage and interpretation of tumor markers<br>
+                        • Maintained precision in endocrine testing procedures
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Operational Internship - Microbiology</h3>
+                    <div class="company">Institut Pasteur</div>
+                    <div class="date">July 2022 - August 2022</div>
+                    <p>
+                        <strong>Laboratory of Food and Environmental Microbiology</strong><br>
+                        • Prepared culture media, sterilized equipment and inoculated samples<br>
+                        • Performed incubation and bacterial colony counting following ISO 9001 and 22000 standards<br>
+                        • Analyzed food safety and environmental contamination<br>
+                        • Applied quality assurance protocols in microbiological testing
+                    </p>
+                </div>
+            </section>
+
+            <!-- Education Section -->
+            <section class="section">
+                <h2>Education</h2>
+                
+                <div class="timeline-item">
+                    <h3>Master's Degree in Biology and Health</h3>
+                    <div class="company">Faculty of Sciences Ben Msik</div>
+                    <div class="date">2023 - 2025</div>
+                    <p>
+                        Advanced training in biology and health sciences, with specialization in biomedical 
+                        research, ecology and environment. Developed expertise in scientific research 
+                        methodologies and advanced laboratory analysis techniques. Focus on environmental 
+                        health and biological systems.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Bachelor's Degree in Life Sciences</h3>
+                    <div class="company">Faculty of Sciences Ben M'sik</div>
+                    <div class="date">2020 - 2023</div>
+                    <p>
+                        Fundamental degree in life sciences, biology and human physiology. Comprehensive 
+                        training covering fundamental aspects of biology, physiology and life sciences. 
+                        Strong foundation in cellular biology, genetics, and human physiological systems.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Scientific Baccalaureate</h3>
+                    <div class="company">Lycée Allal Ben Abdellah</div>
+                    <div class="date">2019 - 2020</div>
+                    <p>
+                        Scientific baccalaureate with specialization in life and earth sciences. 
+                        Secondary education with focus on natural sciences, preparing for higher 
+                        education in biology and related fields.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Trainings & Certifications Section -->
+            <section class="section">
+                <h2>Trainings & Certifications</h2>
+                
+                <div class="timeline-item">
+                    <h3>Generative AI Training</h3>
+                    <div class="company">Orange Digital Center Club Ben M'sik</div>
+                    <div class="date">September 2025</div>
+                    <p>
+                        Comprehensive training program in Generative Artificial Intelligence technologies. 
+                        Gained expertise in AI applications, machine learning fundamentals, and practical 
+                        implementation of AI tools in various professional contexts. Developed understanding 
+                        of ethical AI practices and emerging trends in artificial intelligence.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>No-code App Development Training</h3>
+                    <div class="company">Professional Development Program</div>
+                    <div class="date">2024</div>
+                    <p>
+                        Specialized training in no-code application development platforms and tools. 
+                        Learned to create functional applications without traditional programming, 
+                        focusing on user interface design, workflow automation, and database integration. 
+                        Acquired skills in rapid prototyping and digital solution development.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section class="section">
+                <h2>Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Technical Skills</h3>
+                        <ul class="skill-list">
+                            <li>Microsoft Word and Excel</li>
+                            <li>Proficient with Windows</li>
+                            <li>Skilled in SPSS software</li>
+                            <li>Statistical analysis (ANOVA, t-test)</li>
+                            <li>Biological data analysis</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Laboratory Skills</h3>
+                        <ul class="skill-list">
+                            <li>Interpretation of microbiological results</li>
+                            <li>Use of research and laboratory experimentation tools</li>
+                            <li>Scientific writing skills</li>
+                            <li>Quality control and assurance</li>
+                            <li>Sterile techniques</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Soft Skills</h3>
+                        <ul class="skill-list">
+                            <li>Conflict resolution</li>
+                            <li>Proactive mindset</li>
+                            <li>Team collaboration</li>
+                            <li>Critical thinking</li>
+                            <li>Problem-solving</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section class="section">
+                <h2>Projects</h2>
+                
+                <div class="project-item">
+                    <h3>Antibiotic Residue Detection in Poultry</h3>
+                    <p>
+                        Comprehensive research project focusing on detecting antibiotic residues in poultry 
+                        products using advanced microbiological techniques. Applied four-box method for 
+                        residue detection and conducted extensive antibacterial testing to assess food 
+                        safety and environmental impact. This project contributed to understanding the 
+                        environmental and health implications of antibiotic use in agriculture.
+                    </p>
+                    <div class="project-tech">Skills: Microbiology, Food Safety, Environmental Analysis, Research Methodology</div>
+                </div>
+            </section>
+        </main>
+        
+        <!-- Footer Section -->
+        <footer style="background-color: #D9EAFD; padding: 20px; text-align: center; border-top: 3px solid #9AA6B2; color: #000000; font-size: 0.9rem; font-weight: 500;">
+            Last updated: 2025
+        </footer>
+    </div>
+</body>
+</html>
